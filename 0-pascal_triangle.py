@@ -7,22 +7,21 @@
 
 def pascal_triangle(n):
 
-    """
-    Module that Returns a list of integers
-    representing the Pascal Triangle of n
+"""
+Modulle that returns a list of integers that
+    represent the Pascal Triangle of n
     returns empty list if n <= 0
-    """
-    a=[[] for i in range(n)]
-    for i in range(n):
-        for j in range (i+1):
-            if (j<i):
-                if (j==0):
-                    a[i].append(1)
-                else:
-                    a[i].append(a[i-1][j]+a[i-1][j-1])
-            elif (j==i):
-                a[i].append(1)
-    return a
-n=5
+"""
 
-print(pascal_triangle(n))
+    a = []
+    if n <= 0:
+        return a
+    a = [[1]]
+    for b in range(1, n):
+        temp = [1]
+        for c in range(len(a[b - 1]) - 1):
+            curr = a[b - 1]
+            temp.append(a[b - 1][c] + a[b - 1][c + 1])
+        temp.append(1)
+        a.append(temp)
+    return a
