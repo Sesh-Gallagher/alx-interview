@@ -3,7 +3,6 @@
 0-pascal_triangle
 """
 
-
 def pascal_triangle(n):
     """
         Module returns a list of
@@ -16,9 +15,9 @@ def pascal_triangle(n):
         return []
     triangle = [[1]]
     for a in range(1, n):
-        row = [1]
+        row = [1] 
         for b in range(1, a):
             row.append(triangle[a - 1][b - 1] + triangle[a - 1][b])
         row.append(1)
         triangle.append(row)
-    return triangle
+    return triangle 
