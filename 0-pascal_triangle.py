@@ -11,21 +11,17 @@ def pascal_triangle(n):
          Returns an empty list if n <= 0
     """
 
+    triangle = []
+
     if n <= 0:
-        return []
-    triangle = [[1]]
-    for a in range(1, n):
-<<<<<<< HEAD
-        row = [1]
-=======
-        row = [1] 
->>>>>>> 1dd1a3dce0f8d6ce2be415142311da268616d33e
-        for b in range(1, a):
-            row.append(triangle[a - 1][b - 1] + triangle[a - 1][b])
-        row.append(1)
-        triangle.append(row)
-<<<<<<< HEAD
+        return triangle
+    for i in range(n):
+        temp_list = []
+
+        for j in range(i+1):
+            if j == 0 or j == i:
+                temp_list.append(1)
+            else:
+                temp_list.append(triangle[i-1][j-1] + triangle[i-1][j])
+        triangle.append(temp_list)
     return triangle
-=======
-    return triangle 
->>>>>>> 1dd1a3dce0f8d6ce2be415142311da268616d33e
