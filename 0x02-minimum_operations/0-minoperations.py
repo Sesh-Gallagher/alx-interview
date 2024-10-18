@@ -15,7 +15,7 @@ def minOperations(n):
     results = 0
     i = 2
     while n > 1:
-        #Verify if the problem has been broken down evenly
+        # Verify if the problem has been broken down evenly
         while n % i == 0:
             # if true add a small problmes to the result
             results += i
